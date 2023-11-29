@@ -31,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 import { DepoimentosComponent } from './Pages/home/depoimentos/depoimentos.component';
+import { AsyncPipe } from '@angular/common';
 
 
 
@@ -72,7 +73,8 @@ import { DepoimentosComponent } from './Pages/home/depoimentos/depoimentos.compo
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    AsyncPipe
   ],
   providers: [],
   bootstrap: [AppComponent]
