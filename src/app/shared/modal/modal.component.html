@@ -2,45 +2,30 @@
     <h1 mat-dialog-title>Viajante</h1>
     <div mat-dialog-content>
         <div class="selecao-idade">
-            <ul>
-                <li><strong>Adultos</strong></li>
-                <li>(Acima de 12 anos)</li>
-                <li>
-                    <app-botao-controle operacao="incrementar"></app-botao-controle>
-                    <span>1</span>
-                    <app-botao-controle operacao="decrementar"></app-botao-controle>
-
-                </li>
-            </ul>
-            <div class="selecao-idade">
-                <ul>
-                    <li><strong>Crianças</strong></li>
-                    <li>(Entre 2 e 11 anos)</li>
-                    <li>
-                        <app-botao-controle operacao="incrementar"></app-botao-controle>
-                        <span>0</span>
-                        <app-botao-controle operacao="decrementar"></app-botao-controle>
-                    </li>
-                </ul>
-            </div>
-            <div class="selecao-idade">
-                <ul>
-                    <li><strong>Bebês</strong></li>
-                    <li>(Até 2 anos)</li>
-                    <li>
-                        <app-botao-controle operacao="incrementar"></app-botao-controle>
-                        <span>0</span>
-                        <app-botao-controle operacao="decrementar"></app-botao-controle>
-                    </li>
-                </ul>
-            </div>
+            <app-seletor-passageiro [formControl]="formBuscaService.obterControle('adultos')" titulo="Adultos" subTitulo="(Acima de 12 anos)"></app-seletor-passageiro>
+            <app-seletor-passageiro  titulo="Crianças" subTitulo="(Entre 2 e 11 anos)"></app-seletor-passageiro>
+            <app-seletor-passageiro  titulo="Bebês" subTitulo="(Até 2 anos)"></app-seletor-passageiro>
         </div>
         <div class="selecao-categoria">
             <ul>
                 <p><strong>Categoria</strong></p>
                 <mat-chip-listbox aria-label="Seleção de passagens">
-                    <mat-chip-option selected>Executiva</mat-chip-option>
-                    <mat-chip-option>Econômica</mat-chip-option>
+                    <mat-chip-option 
+                    value="Econômica"
+                    [selected] ="formBuscaService.formBuscar.get('tipo')?.value==='Econômica'"
+                    (selectionChange)="formBuscaService.alterarTipo($event, 'Econômica')"
+                    >
+                    Econômica
+                    
+                </mat-chip-option>
+                <mat-chip-option 
+                value="Executiva"
+                [selected] ="formBuscaService.formBuscar.get('tipo')?.value==='Executiva'"
+                (selectionChange)="formBuscaService.alterarTipo($event, 'Executiva')"
+                    >
+                    Executiva
+                
+                </mat-chip-option>
                 </mat-chip-listbox>
             </ul>
         </div>

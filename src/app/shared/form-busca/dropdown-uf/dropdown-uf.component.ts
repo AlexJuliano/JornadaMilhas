@@ -27,7 +27,6 @@ export class DropdownUfComponent implements OnInit {
   ngOnInit(): void {
     this.unidadeFederativaService.listarEstados().subscribe( resposta => {
         this.unidadeFederativa = resposta
-        console.log(resposta)
     })
 
     this.opcoesFiltradas$ = this.control.valueChanges.pipe(
