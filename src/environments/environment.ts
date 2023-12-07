@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl : 'http://api.jornadamilhas.com'
+    apiUrl : 'https://ubeautiful-d997b5913482.herokuapp.com/'
 };

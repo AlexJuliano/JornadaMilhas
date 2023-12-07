@@ -29,10 +29,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './Pages/home/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
+import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
 import { DepoimentosComponent } from './Pages/home/depoimentos/depoimentos.component';
 import { AsyncPipe } from '@angular/common';
 import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { FormBaseComponent } from './shared/form-base/form-base.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { CadastroComponent } from './Pages/cadastro/cadastro.component';
 
 
 
@@ -57,7 +63,10 @@ import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-
     PromocoesComponent,
     DropdownUfComponent,
     DepoimentosComponent,
-    SeletorPassageiroComponent
+    SeletorPassageiroComponent,
+    LoginComponent,
+    FormBaseComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +85,10 @@ import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-
     HttpClientModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    AsyncPipe
+    AsyncPipe,
+    MatRadioModule,
+    MatDividerModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

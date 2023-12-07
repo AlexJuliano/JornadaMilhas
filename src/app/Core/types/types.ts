@@ -19,3 +19,15 @@ export interface UnidadeFederativa {
     sigla: string;
 }
 
+export interface PessoaUsuaria {
+    nome:       string;
+    nascimento: Date;
+    cpf:        string;
+    telefone:   string;
+    email:      string;
+    senha:      string;
+    genero:     string;
+    cidade:     string;
+    estado:     UnidadeFederativa;
+}
+
