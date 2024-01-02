@@ -8,7 +8,7 @@ import { BannerComponent } from './shared/banner/banner.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CardComponent } from './shared/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule}  from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { ContainerComponent } from './shared/container/container.component';
 import { HomeComponent } from './Pages/home/home.component';
@@ -25,7 +25,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ModalComponent } from './shared/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './Pages/home/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -35,10 +35,12 @@ import { AsyncPipe } from '@angular/common';
 import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CadastroComponent } from './Pages/cadastro/cadastro.component';
+import { PerfilComponent } from './Pages/perfil/perfil.component';
+import { AutenticacaoInterceptor } from './Core/interceptors/autenticacao.interceptor';
 
 
 
@@ -66,7 +68,8 @@ import { CadastroComponent } from './Pages/cadastro/cadastro.component';
     SeletorPassageiroComponent,
     LoginComponent,
     FormBaseComponent,
-    CadastroComponent
+    CadastroComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +93,11 @@ import { CadastroComponent } from './Pages/cadastro/cadastro.component';
     MatDividerModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AutenticacaoInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
