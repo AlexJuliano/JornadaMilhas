@@ -41,6 +41,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CadastroComponent } from './Pages/cadastro/cadastro.component';
 import { PerfilComponent } from './Pages/perfil/perfil.component';
 import { AutenticacaoInterceptor } from './Core/interceptors/autenticacao.interceptor';
+import { BuscaComponent } from './Pages/busca/busca.component';
 
 
 
@@ -69,7 +70,8 @@ import { AutenticacaoInterceptor } from './Core/interceptors/autenticacao.interc
     LoginComponent,
     FormBaseComponent,
     CadastroComponent,
-    PerfilComponent
+    PerfilComponent,
+    BuscaComponent
   ],
   imports: [
     BrowserModule,
